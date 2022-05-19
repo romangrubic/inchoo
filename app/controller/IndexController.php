@@ -2,8 +2,15 @@
 
 class IndexController extends Controller
 {
-    public function index()
+     public function index()
     {
-        return $this->view->render('index');
+        return $this->view->render('index', [
+            'countPhoto' => $this->getCountPhoto(),
+        ]);
+    }
+
+    public function getCountPhoto()
+    {
+        echo Index::countPhoto();
     }
 }
