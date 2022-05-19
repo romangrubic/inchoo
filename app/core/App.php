@@ -49,4 +49,11 @@ class App
 
         return $route;
     }
+
+//    Method for easy extraction of data in config.php
+    public static function config($key)
+    {
+        $config = include BP_APP . 'config.php';
+        return $config[$key];
+    }
 }
