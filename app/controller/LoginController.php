@@ -45,6 +45,14 @@ class LoginController extends Controller
         header('Location:' . App::config('url'));
     }
 
+    public function logout()
+    {
+        unset($_SESSION['authorized']);
+        session_destroy();
+
+        header('Location:' . App::config('url'));
+    }
+
 //    Login data validation
     private function validateLogin()
     {
